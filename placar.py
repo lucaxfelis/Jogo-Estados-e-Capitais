@@ -1,20 +1,26 @@
 import auxiliar
+import os
+
 
 def mostra_placar(nome):
     ha_placar = True
 
-    try:
+    if os.exists("placar.txt"):
         open("placar.txt")
-    except:
+    else:
         ha_placar = False
 
     if ha_placar:
-        print(f"NOME{' '*16}PLACAR\n")
+        cabecalho = "NOME" + ' ' * 16 + "PLACAR\n"
+        print(cabecalho)
         with open("placar.txt") as placar:
             for linha in placar:
-                nome, pontos = linha[:-1].split()
-                espaco = 20 - len(nome)
-                print(f"{nome.replace('_', ' ')}{' ' * espaco}{pontos}")
+                nome, pontos = linha.strip().split()
+                nome = nome.replace('_', ' ')
+                # define a posição para o placar estar justificado à direita
+                numero_rjust = len(cabecalho) - len(nome) - 1
+                pontos = pontos.rjust(numero_rjust, ' ')
+                print("{}{}".format(nome, pontos))
     else:
         print("Ainda não há um placar. Você deseja jogar?")
         print("\tSIM")
@@ -27,6 +33,8 @@ def mostra_placar(nome):
             print()
             auxiliar.sair()
 
+
 def guarda_placar(nome, pontuacao):
     with open("placar.txt", 'a') as placar:
-        placar.write(f"{nome.upper().replace(' ', '_')} {pontuacao}\n")
+        nome = nome.upper().replace(' ', '_')
+        placar.write("{} {}\n".format(nome, pontuacao))

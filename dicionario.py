@@ -1,3 +1,10 @@
+"""Dicionário com informações sobre os estados, capitais e siglas.
+
+Cada elemento do dicionário possui o nome do estado como chave
+e seu valor respectivo é composto por uma tupla com dois elementos,
+onde o primeiro elemento é a sua capital, e o segundo elemento é
+a sigla do estado."""
+
 dicionario_estados_capitais = {
     'Acre': ('Rio Branco', 'AC'),
     'Alagoas': ('Maceió', 'AL'),

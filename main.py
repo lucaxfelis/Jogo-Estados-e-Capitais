@@ -21,8 +21,10 @@ if 'iniciar' in opcao:
     print(f'Estamos quase lá, {nome}! Agora escolha seu modo de jogo (treinamento ou maratona):')
     iniciar_jogo(nome)
 elif 'placar' in opcao:
-    mostra_placar(nome)
-    print()
-    sair()
+    iniciar_jogo = mostra_placar(nome):
+    if iniciar_jogo:
+        iniciar_jogo()
+    else:
+        sair()
 elif 'sair' in opcao:
     sair()

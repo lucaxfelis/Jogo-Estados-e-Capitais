@@ -1,3 +1,6 @@
+"""Funções auxiliares e estruturas de formatação utilizadas pelo arquivo
+main.py"""
+
 from sys import exit
 from perguntas import *
 from placar import guarda_placar
@@ -6,7 +9,8 @@ verde_bg = "\033[1;42m"
 vermelho_bg = "\033[1;41m"
 inverte_bg = "\033[;7m "
 reset = "\033[0m"
-barra =  "\n" + inverte_bg + "# " * 36 + reset + "\n"
+barra = "\n" + inverte_bg + "# " * 36 + reset + "\n"
+
 
 def iniciar_jogo(nome):
     """Inicia um novo jogo mostrando um menu de modos de jogo e ajuda."""
@@ -38,14 +42,17 @@ def iniciar_jogo(nome):
             print('Modo de jogo inválido. Insira novamente:')
             modo_jogo = input('> ').lower()
 
+
 def sair():
     print(f'{inverte_bg}MUITO OBRIGADO POR EXPERIMENTAR O JOGO ESTADOS E CAPITAIS! ATÉ A PRÓXIMA!{reset}')
-    exit()
+    exit(0)
+
 
 def ajuda():
     print('TREINAMENTO: você escolhe o número de rodadas e no fim, confere se acertou as respostas e a sua pontuação.')
     print('\nMARATONA: você segue respondendo perguntas até errar. Sua pontuação será guardada no placar.')
     print(barra)
+
 
 def treinamento(nome):
 

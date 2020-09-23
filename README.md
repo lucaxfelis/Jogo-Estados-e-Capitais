@@ -2,10 +2,10 @@
 
 Jogo sobre estados brasileiros e suas capitais.
 
-<hr>
+## Descrição
 
 Desenvolvido para fins de estudo com a linguagem Python.
 
-Não é necessário importar nenhuma biblioteca externa.
+Para jogar, não é necessário instalar nenhuma biblioteca. Apenas executar o arquivo "main.py":
 
-Para jogar, execute o programa "main.py".
+`python3 main.py`
